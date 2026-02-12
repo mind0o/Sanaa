@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+body {
+  background-color: sienna;
+}
+h1 {
+  font-size: 100px;
+  color: white;
+}
+button {
+  font-size: 150px;
+}
+
+</style>
+<title>سنع</title>
+</head>
+<body>
+
+<div style="text-align: center;">
+	<h1>سنع</h1>
+
+</div>
+
+</body>
+</html>
