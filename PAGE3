@@ -14,15 +14,41 @@ button {
   font-size: 150px;
 }
 
+.button1 {background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    color: white;
+    outline: none;} 
+
+.button2 {width: 950px;} 
 </style>
 <title>سنع</title>
 </head>
 <body>
 
+<button class="button button1" onclick="history.back()">←</button>
+
 <div style="text-align: center;">
 	<h1>سنع</h1>
+<button class="button button2" onclick="toggle('m1')">المجلس </button>
+<h1 id="m1" style="display: none;"> asdfoasdfnoasdfn</h1>
+<br>
 
 </div>
 
+<script>
+function toggle(targetID) {
+  var imgElement = document.getElementById(targetID);
+  if(imgElement.style.display !="none"){
+     imgElement.style.display = "none";
+  }else{
+     imgElement.style.display = "block";
+  }
+}
+</script>
+
 </body>
+
 </html>
