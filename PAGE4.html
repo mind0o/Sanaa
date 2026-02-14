@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+body {
+  background-color: sienna;
+}
+h1 {
+  font-size: 50px;
+  color: white;
+}
+button {
+  font-size: 125px;
+}
+
+.button1 {background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    color: white;
+    outline: none;} 
+
+.button2 {width: 950px;} 
+</style>
+<title>سنع</title>
+</head>
+<body>
+
+
+
+<button class="button button1" onclick="history.back()">←</button>
+
+<div style="text-align: center;">
+	<h1>وش أرد؟</h1>
+<br>
+<form id="myForm" onsubmit="searchh()">
+        <input type="text" id="q" name="q" value="" /><br />
+        <input type="submit" value="بحث" />
+    </form>
+<h2 id="mm">
+
+</h2>
+<br>
+
+
+
+
+
+</div>
+
+<script>
+let searchTable = [
+[ "السلام عليكم" ,0],
+[0,0]
+
+];
+
+let answerTable = 
+[
+"وعليكم السلام",
+"",
+];
+
+var form = document.getElementById("myForm");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
+
+function searchh() {
+  var textt = String(document.getElementById("q").value);
+  var outputt = "";
+  var found  = false;
+  var answerID = 0;
+
+for (let i = 0; i < searchTable.length; i++) {
+
+if(textt.trim() == String(searchTable[i][0]).trim()){
+found=true;
+answerID = i;
+break;
+}
+}
+
+
+if(found){
+outputt = answerTable[answerID];
+}else{
+outputt = "لا اعرف الجواب ";
+}
+
+  document.getElementById("mm").innerHTML = outputt;
+}
+</script>
+
+</body>
+
+</html>
