@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+body {
+  background-color: sienna;
+}
+h1 {
+  font-size: 30px;
+  color: white;
+}
+h2 {
+  font-size: 50px;
+  color: white;
+}
+button {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 125px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button1 {background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    color: white;
+    outline: none;} 
+
+.button3 {background-color: transparent;
+	position: absolute;
+            top: 10px; 
+            right: 10px; 
+            padding: 8px 12px;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    color: white;
+    outline: none;} 
+
+.button2 {width: 950px;} 
+
+input[type="text"] {
+        font-size: 40px;       /* Change font size */
+        font-family: Arial, sans-serif; /* Optional: change font family */
+        padding: 8px;          /* Optional: add padding for better look */
+        width: 500px;          /* Optional: set width */
+    }
+input[type="submit"]{
+	font-size: 75px;
+}
+</style>
+<title>تحدي السنع</title>
+</head>
+<body>
+
+
+
+<button class="button button1" onclick="history.back()">←</button>
+<button class="button button3" onclick="window.location.reload()">⟳</button>
+
+<div style="text-align: center;">
+	<h1>تحدي السنع</h1>
+<br>
+<h2 id="qq">
+sdfl;asdfjlsdk;gjsdlgm
+</h2>
+<br><br>
+<button type="button" id="b0" onclick="answerr();">جواب ا</button>
+<br><br>
+<button type="button" id="b1" onclick="answerr();">جواب ب</button>
+<br><br>
+<button type="button" id="b2" onclick="answerr();">جواب ج</button>
+<br><br>
+<button type="button" id="b3" onclick="answerr();">جواب د</button>
+
+
+
+</div>
+
+<script>
+
+let questionTable = [
+"في المجلس عندما تعطي شخص فنجان القهوة بأي يد تعطيه ؟",
+"ماذا تقول عندما تدخل المجلس ؟",
+"ما هو لون الكندورة الرسمي ؟",
+"ما هو لون العباية الرسمي",
+"كيف ترحب بإمرأة إماراتية ؟",
+
+];
+let questionId=0;
+questionId= Math.floor(Math.random() * questionTable.length);
+let order=[0,1,2,3];
+shuffle(order);
+
+let answerTable = [
+	[
+	"اليد اليمين",
+	"اليد اليسار",
+	"الرجل اليسار",
+	"الرجل اليمين"
+	],
+
+	[
+	"السلام عليكم",
+	"وين الاكل",
+	"مع السلامة",
+	"ااااااااااااااااااااا"
+	],
+
+	[
+	"ابيض",
+	"احمر",
+	"اصفر",
+	"شفاف"
+	],
+
+	[
+	"اسود",
+	"اخضر",
+	"اصفر",
+	"برتقالي"
+	],
+
+	[
+	"قل السلام عليكم من بعيد فقط",
+	"صافح يدها",
+	"احضنها",
+	"اضربها"
+	],
+];
+
+document.getElementById("qq").innerHTML = questionTable[questionId];
+
+
+for (let i = 0; i < 4; i++) {
+	document.getElementById("b"+i).innerHTML = answerTable[questionId][order[i]];
+}
+
+function answerr() {
+
+	for (let i = 0; i < 4; i++) {
+		if(document.getElementById("b"+i).innerHTML == answerTable[questionId][0]){
+			document.getElementById("b"+i).style.color = "green";
+		}else{
+			document.getElementById("b"+i).style.color = "red";
+		}
+	}
+}
+
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
+
+</script>
+
+</body>
+
+</html>
