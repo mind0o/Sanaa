@@ -10,6 +10,10 @@ h1 {
   font-size: 50px;
   color: white;
 }
+h2 {
+  font-size: 100px;
+
+}
 button {
   font-size: 125px;
 }
@@ -23,8 +27,28 @@ button {
     outline: none;} 
 
 .button2 {width: 950px;} 
+
+input[type="text"] {
+        font-size: 40px;       /* Change font size */
+        font-family: Arial, sans-serif; /* Optional: change font family */
+        padding: 8px;          /* Optional: add padding for better look */
+        width: 500px;          /* Optional: set width */
+    }
+input[type="submit"]{
+	  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 75px;
+  text-align: center;
+  text-decoration: none;
+}
 </style>
-<title>سنع</title>
+<title>وش أرد؟</title>
 </head>
 <body>
 
@@ -53,14 +77,25 @@ button {
 <script>
 let searchTable = [
 [ "السلام عليكم" ,0],
-[0,0]
+["عيد مبارك",1],
+["عيدك مبارك",1],
+["عيدكم مبارك",1],
+["عيدج مبارك",1],
+["رمضان كريم",2],
+["رمضان مبارك",2],
+["هلا",3],
+["بالعافية",4],
+["عافية",4],
 
 ];
 
 let answerTable = 
 [
 "وعليكم السلام",
-"",
+"عساكم من العايدين والسالمين",
+"علينا وعليك إن شاء الله",
+"اهلين",
+"الله يعافيك",
 ];
 
 var form = document.getElementById("myForm");
@@ -77,7 +112,7 @@ for (let i = 0; i < searchTable.length; i++) {
 
 if(textt.trim() == String(searchTable[i][0]).trim()){
 found=true;
-answerID = i;
+answerID = searchTable[i][1];
 break;
 }
 }
